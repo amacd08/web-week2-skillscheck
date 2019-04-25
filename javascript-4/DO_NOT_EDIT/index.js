@@ -12,7 +12,6 @@ setColor(faveColors);
 redactBtn.addEventListener('click', () => redactInfo(me));
 
 function createLi(text) {
-  console.log(text)
   const item = document.createElement('li');
   text !== 'redacted'
     ? (item.innerText = `${text} ${me.superPowerXP()}XP`)
@@ -31,5 +30,4 @@ function redacted() {
   profileImg.src = '';
   createLi(me.superPowers);
 }
-console.log(me.superPowers)
 setPowers(me.superPowers);
