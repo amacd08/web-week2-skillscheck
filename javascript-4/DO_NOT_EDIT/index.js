@@ -6,12 +6,13 @@ const redactBtn = document.getElementById('redact-btn');
 title.innerText = `${regularName} aka ${superName.toUpperCase()}`;
 intro.innerText = `In the not-so-sleepy town of ${homeTown}, lives a super hero waiting to save the day...`;
 
-profileImg.src = me.profileImage();
+profileImg.src = me.profileImage;
 setColor(faveColors);
 
 redactBtn.addEventListener('click', () => redactInfo(me));
 
 function createLi(text) {
+  console.log(text)
   const item = document.createElement('li');
   text !== 'redacted'
     ? (item.innerText = `${text} ${me.superPowerXP()}XP`)
@@ -30,5 +31,5 @@ function redacted() {
   profileImg.src = '';
   createLi(me.superPowers);
 }
-
+console.log(me.superPowers)
 setPowers(me.superPowers);
